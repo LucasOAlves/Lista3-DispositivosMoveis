@@ -1,0 +1,62 @@
+<!--
+  Generated template for the ModalAddTask page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nova Tarefa</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+     <!-->      DATA da TAREFA     </!-->
+
+    <ion-item>
+      <ion-label>Data</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="taskDate"></ion-datetime>
+    </ion-item>
+
+    <!-->      Tipo de atividade da tarefa     </!-->
+    <ion-list-header color="dark">Tipo de Atividade</ion-list-header>
+    <ion-list radio-group="" [(ngModel)]="taskActivity">
+      <ion-item>
+        <ion-label>Prova</ion-label>
+        <ion-radio value="prova" checked="false"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Trabalho</ion-label>
+        <ion-radio value="trabalho" checked="false"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+    <!-->      Descrição da tarefa     </!-->
+    <ion-list-header color="dark">Descrição</ion-list-header>
+    <ion-item>
+      <ion-textarea [(ngModel)]="taskDescription"></ion-textarea>
+    </ion-item>
+
+    <!-->      Conteudo da TAREFA     </!-->
+    <ion-list-header color="dark">Conteudo</ion-list-header>
+    <ion-item>
+      <ion-textarea [(ngModel)]="taskContent"></ion-textarea>
+    </ion-item>
+
+    <!-->      Status da TAREFA     </!-->
+    <ion-item>
+      <ion-label>Feita</ion-label>
+      <ion-toggle [(ngModel)]="taskStatus"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+
+  <button ion-button block outline="" (click)="saveTask()">Save</button>
+  <button ion-button block outline="" (click)="cancelAddTask()">Cancel</button>
+</ion-content>

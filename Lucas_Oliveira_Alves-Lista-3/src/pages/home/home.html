@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>
+        Tarefas
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only color="primary" (click)="openModalAddTask()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <button ion-item *ngFor="let task of tasks" (click)="openDetail(task.id)">
+    <h2>{{task.taskDescription}}</h2>
+    <ion-badge>{{task.taskDate}}</ion-badge>
+ </button>
+</ion-list>
+</ion-content>
